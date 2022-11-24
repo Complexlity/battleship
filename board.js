@@ -1,16 +1,14 @@
 import Ship from './ship.js'
 
-export default class Board{
+let board = (function(){
+
+    class Board{
     constructor(length=10){
         this.length=length
-        this.coordinates = {}
-        for(let i = 0; i < 10; i++){
-            for(let j=0; j<10; j++){
-              let coordinate = [i, j]
-              this.coordinates[coordinate] = false
-            }
-        }
+        this.coordinates = getCoordinates()
     }
+
+
 
 
     placeship(ship, coord){
@@ -40,9 +38,17 @@ export default class Board{
         let yAxis = coord[0]
         let xAxis = coord[1]
         let cord = `${yAxis}, ${xAxis}`
+        let hit = false;
+        let positionHit = this.coordinates[coord]
 
+        if(positionHit){
         this.coordinates[coord] = false
+        hit = true
     }
+    return hit
+}
+    
+
 
     allSunk(){
         let coordinatObject = this.coordinates
@@ -55,3 +61,20 @@ export default class Board{
         return true
     }
 }
+
+function getCoordinates(){
+    let coordinates = {}
+    for(let i = 0; i < 10; i++){
+        for(let j=0; j<10; j++){
+          let coord = [i, j]
+          coordinates[coord] = false
+        }
+    }
+    return coordinates
+    }
+    
+    return Board
+
+})()
+
+export default board
