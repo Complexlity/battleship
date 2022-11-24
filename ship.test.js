@@ -6,8 +6,8 @@ describe('My Ship', () => {
     beforeEach(() => {
         ship = new Ship(3)  
     })
-    test.skip('Should return appropriate object', () => {
-        expect(ship).to({length:3, hits:0, isSunk:false})
+    test('Should return appropriate object', () => {
+        expect(typeof ship).toBe('object')
     })
 
     test('Should take hits', () => {
