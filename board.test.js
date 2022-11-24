@@ -1,7 +1,6 @@
 import Board from './board'
 import Ship from './ship'
 
-console.log('Hello')
 let board;
 
 describe('Board Object', () => {
@@ -29,7 +28,6 @@ test('Should Place Ships', () => {
         board.placeship(ship, i)
         expect(board.coordinates[i]).toBe(true)
     }
-    console.log(board.coordinates)
 })
 
 test('Should check if coordinate has ship', () => {

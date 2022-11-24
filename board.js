@@ -55,10 +55,3 @@ export default class Board{
         return true
     }
 }
-
-let myBoard = new Board()
-let myShip = new Ship(5)
-let coord = [9,0]
-
-myBoard.placeship(myShip, coord)
-console.log(myBoard.coordinates)
