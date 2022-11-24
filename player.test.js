@@ -15,4 +15,11 @@ describe('Player Object', () => {
         expect(player.board).toBeTruthy()
     })
 
+    test('Should add ships to board', () => {
+        let coordinates = [[1,4], [3,5], [6,7], [0,3], [6,2]]
+        for(let i of coordinates){
+            player.populateToBoard(i)
+            expect(player.board.coordinates[i]).toBe(true)
+        }
+    })
 })

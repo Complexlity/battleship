@@ -12,7 +12,6 @@ let board = (function(){
 
 
     placeship(ship, coord){
-        debugger
         let length = ship.length
         let yAxis = coord[0]
         let xAxis = coord[1]
