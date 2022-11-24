@@ -35,17 +35,3 @@ let coordinates = [[1,4], [3,5], [6,7], [0,3], [6,2]]
         for(let i of coordinates){
             newPlayer.populateToBoard(i)
         }
-
-// newPlayer.populateToBoard([1,3])
-
-// console.log(newPlayer)
-
-for (const key in newPlayer.board.coordinates) {
-
-    if (newPlayer.board.coordinates.hasOwnProperty(key)) {
-
-        console.log(`${key}: ${newPlayer.board.coordinates[key]}`);
-    }
-}
-
-// console.log(newPlayer.board.coordinates['1,3'])
